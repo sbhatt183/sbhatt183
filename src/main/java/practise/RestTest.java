@@ -1,5 +1,8 @@
 package practise;
 import io.restassured.*;
+import io.restassured.authentication.FormAuthConfig;
+import io.restassured.config.LogConfig;
+import io.restassured.internal.RequestSpecificationImpl;
 import io.restassured.path.json.JsonPath;
 import pojo.Addplace;
 import pojo.Location;
@@ -40,8 +43,12 @@ public class RestTest {
 		System.out.println(FileUtils.getProperty("GetpalceURI"));
 		
 		System.out.println(Integer.parseInt("200"));
+		RequestSpecificationImpl rsq;
 		
-		
-	}
+		given().auth().form("user","pwd",new FormAuthConfig("/login","sName","pName"));
+		/*
+		given().header("Content-Type","application/json")
+		.config(config.logConfig(LogConfig.logConfig().blacklistHeader(DEFAULT_BODY_ROOT_PATH, args))))
+	*/}
 
 }

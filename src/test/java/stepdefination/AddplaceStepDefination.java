@@ -26,7 +26,7 @@ import junit.framework.Assert;
 @RunWith(Cucumber.class)
 public class AddplaceStepDefination {
 	public Addplace place;
-	public RequestSpecification rq=AddplaceReqBuilder.getRequestSpecification();;
+	public RequestSpecification rq=AddplaceReqBuilder.getRequestSpecification();
 	public Response rsponse;
 	public static String place_id;
 	
@@ -34,6 +34,7 @@ public class AddplaceStepDefination {
 	
 	@Given("^Add place payload$")
     public void add_place_payload()  {
+		
 		Location loc =new Location();
 		loc.setLat(-38.383494);
 		loc.setLng(-38.383494);
@@ -48,18 +49,16 @@ public class AddplaceStepDefination {
 		place.setLanguage("Enghlish-EN");
 		place.setWebsite("www.abc.com");
 		place.setLocation(loc);
-		place.setTypes(typ);
-		
-		
+		place.setTypes(typ);	
        
     }
 
     @When("^user call \"([^\"]*)\" and \"([^\"]*)\" the request$")
     public void user_call_something_and_something_the_request(String api, String mthd) {
-    	//rq=AddplaceReqBuilder.getRequestSpecification();
+    	rq=AddplaceReqBuilder.getRequestSpecification();
     	if(api.equalsIgnoreCase("addplace")) {
     	this.rsponse= given().spec(rq).body(place).when()
-      .post(FileUtils.getProperty(api+"URI"));
+    					.post(FileUtils.getProperty(api+"URI"));
     	}
     
     	if(api.equalsIgnoreCase("deleteplace")) {

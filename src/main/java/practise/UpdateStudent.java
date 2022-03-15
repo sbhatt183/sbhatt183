@@ -14,7 +14,7 @@ public class UpdateStudent extends TestBuilder {
 	
 
 	
-	@org.junit.Test
+	//@org.junit.Test
 	public void zputRequest() {
 		
 		System.out.println("******************Executing put request*******");
@@ -28,7 +28,7 @@ public class UpdateStudent extends TestBuilder {
 		
 	}
 	
-	@org.junit.Test
+	//@org.junit.Test
 	public void patchStudent() {
 		System.out.println("********Executing Patch request*****************");
 		Response rsp=given().contentType(ContentType.JSON).body("{\r\n"

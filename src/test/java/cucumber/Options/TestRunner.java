@@ -7,9 +7,10 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features={"E:\\Projects\\cucumber\\src\\test\\java\\features"},plugin="json:target/jsonReports/cucumberReport.json",
+		features={"E:\\Projects\\cucumber\\src\\test\\java\\features\\Addplace.feature"},
+		plugin={"json:target/jsonReports/cucumberReport.json","rerun:rerun/failed.txt"},
 		glue={"stepdefination"}
 		)
 public class TestRunner {
-
+ 
 }

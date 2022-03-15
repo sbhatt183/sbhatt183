@@ -23,6 +23,7 @@ public class AddplaceReqBuilder {
 			builder.addQueryParam("key", "qaclick123");
 			builder.addFilter(RequestLoggingFilter.logRequestTo(p));
 			builder.addFilter(ResponseLoggingFilter.logResponseTo(p));
+			//ResponseLoggingFilter.responseLogger().
 			reqSpec=builder.build();
 		}
 		
@@ -32,6 +33,7 @@ public class AddplaceReqBuilder {
 	
 	public static ResponseSpecBuilder getResponseSpecification() {
 		ResponseSpecBuilder rspSpec= new ResponseSpecBuilder();
+		
 		
 		return rspSpec;
 		

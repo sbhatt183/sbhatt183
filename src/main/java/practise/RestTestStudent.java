@@ -17,7 +17,7 @@ import java.util.List;
 public class RestTestStudent extends TestBuilder {
 
 	//@DisplayName("Geting student data")
-	@org.junit.Test
+	//@org.junit.Test
 	//@Disabled
 	public void createStudent() {
 		Response rsp=given().log().ifValidationFails(LogDetail.BODY)
@@ -28,8 +28,9 @@ public class RestTestStudent extends TestBuilder {
 		
 	}
 	
-	@org.junit.Test
+	//@org.junit.Test
 	//@Disabled
+	
 	public void getStrudentList() {
 		JsonPath js = given().contentType(ContentType.JSON)
 						.when().get("/list").then().extract().response().jsonPath();
@@ -52,7 +53,7 @@ public class RestTestStudent extends TestBuilder {
 	}
 	
 	
-	@org.junit.Test
+	//@org.junit.Test
 	//@Disabled
 	public void getAllIds() {
 		Response rs= given().contentType(ContentType.JSON).when()
@@ -64,7 +65,7 @@ public class RestTestStudent extends TestBuilder {
 		System.out.println(js.getList("id").toString());
 	}
 	
-	@org.junit.Test
+	//@org.junit.Test
 	public void getNameOfaCourse() {
 		Response rs= given().contentType(ContentType.JSON).when()
 				.get("/list");

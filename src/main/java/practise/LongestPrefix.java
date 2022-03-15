@@ -48,4 +48,8 @@ public static String longestCommonPrefix(String arr[], int n){
         return check.isEmpty()?"-1":check;
     }
 
+public void test() {
+	
+}
+
 }
