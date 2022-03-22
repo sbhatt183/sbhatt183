@@ -23,8 +23,8 @@ public class ShortestOccurance {
 			
 	}
 
-	public static int getMindistance(List<String>s,String s1,String s2) {
-		if(s1.isEmpty()||s2.isEmpty()||s.size()<=0)
+	public static int getMindistance(List<String>s,String word1,String word2) {
+		if(word1.isEmpty()||word2.isEmpty()||s.size()<=0)
 			return -1;
 		
 		
@@ -33,11 +33,11 @@ public class ShortestOccurance {
 		
 		for(int i=0;i<s.size();i++) {
 			
-			if(s.get(i).equals(s1)) {
+			if(s.get(i).equals(word1)) {
 				x=i;
 			}
 			
-			if(s.get(i).equals(s2)) {
+			if(s.get(i).equals(word2)) {
 				y=i;
 			}
 			
